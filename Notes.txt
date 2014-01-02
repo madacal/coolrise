@@ -24,3 +24,14 @@ Standard Deviation = Sqrt(Variance)
 Variance = Mean(SQ(Sample-Mean)) (if sample divide by n-1, if population divide by n)
 
 @Degrees of Freedom
+DF    = Degrees of Freedom
+Udf   = Used Degrees of Freedom (test window size) 
+(for each indicator Do Udf = Udf + indicator windowsize + 1)
+(for each trading-rule Do Udf = Udf + 1)
+
+Odf   = Original Degrees of Freedom (number of data points)
+Rdf%  = Remaining Percentage of Degrees of Freedom
+Rdf   = 100 × [1 − (Udf/Odf)]
+Rdf   = 100 × [1 − (30/100)]
+Rdf   = 70%
+
