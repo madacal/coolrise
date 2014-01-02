@@ -1,13 +1,8 @@
-My notes
-
-
 #Chapter 6
 
 @Performance By Period
 (pp141)
 performance statistics year-by-year (table 6.4) 
-
-
 
 @Standard Error
 (pp160)
@@ -34,4 +29,19 @@ Rdf%  = Remaining Percentage of Degrees of Freedom
 Rdf   = 100 × [1 − (Udf/Odf)]
 Rdf   = 100 × [1 − (30/100)]
 Rdf   = 70%
+>less than 90 percent remaining degrees of freedom is considered too few
 
+@Trading window
+1/8 or 1/3 of test window size
+>shorter trade window, more profitable, more frequent reoptimization
+>longer trade window, less responsice, more adaptable to large shifts in trend
+
+@Test Window Size 
+at least five year (daily:1825 points)
+
+@Number of Trades 
+at least 30 
+> the more trades, the better, best defence against overfitting
+
+@Optimization Profile
+> at least 20 percent of test should result in profit
