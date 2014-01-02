@@ -1,11 +1,26 @@
 My notes
 
 
-Chapter 6
+#Chapter 6
 
-Performance By Period
+@Performance By Period
 (pp141)
 performance statistics year-by-year (table 6.4) 
 
 
 
+@Standard Error
+(pp160)
+Standard Error = Standard Deviation/Square Root of the Sample Size
+AWt   = Average Win
+StDev = Standard Deviation
+SqRt  = Square Root
+Nwt   = Number of Winning Trades
+StandardError = StDev(AWt)/SqRt(Nwt)
+>The larger the sample, the smaller the standard error
+>The smaller the standard deviation, the more stable 
+
+Standard Deviation = Sqrt(Variance)
+Variance = Mean(SQ(Sample-Mean)) (if sample divide by n-1, if population divide by n)
+
+@Degrees of Freedom
