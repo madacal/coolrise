@@ -21,7 +21,7 @@ Variance = Mean(SQ(Sample-Mean)) (if sample divide by n-1, if population divide 
 @Degrees of Freedom
 DF    = Degrees of Freedom
 Udf   = Used Degrees of Freedom (test window size) 
-(for each indicator Do Udf = Udf + indicator windowsize + 1)
+(for each indicator Do Udf = Udf + (unique?indicator windowsize:0(pp326)) + 1)
 (for each trading-rule Do Udf = Udf + 1)
 
 Odf   = Original Degrees of Freedom (number of data points)
@@ -30,6 +30,19 @@ Rdf   = 100 × [1 − (Udf/Odf)]
 Rdf   = 100 × [1 − (30/100)]
 Rdf   = 70%
 >less than 90 percent remaining degrees of freedom is considered too few
+
+Freedom
+1. Use a large enough test sample
+2. Allow for start-up overhead
+3. Do not overparameterize the strategy
+4. Be sure the range of parameter scans is strategy and sample appropriate
+5. Test with degrees of freedom of at least 90 percent remaining whenever possible
+
+@Trade Sample Size
+> 30 - 50 Trades is an adequate minimum 
+
+@Standard Error of Trade Sample Size 
+Std Err = 1 / Sqrt (# of Trades)
 
 @Trading window
 1/8 or 1/3 of test window size
@@ -45,3 +58,60 @@ at least 30
 
 @Optimization Profile
 > at least 20 percent of test should result in profit
+
+
+#Chapter 11
+WALK FORWARD ANALYSIS
+
+@Walk-Forward Efficeny
+> robust strategies have WFE >= %50-%60
+(chp13)
+WFE = Annualized profit of WFA / Annualized profit of Optimization
+
+@Shelf-life of parameter set 
+identified by the test window of WFA
+
+@Walk-Forward Window (trading window)
+%25 to 35 percent of optimization window
+
+@Walk-Forward Report 
+(pp240)
+
+@Annualized RRR
+
+@MDD 
+> if MDD of WFA exceeds MDD of optimization MDD, then TROUBLE!
+
+
+#Chapter 12
+The Evaluation of Performance 
+
+@Annualized Reward-to-Risk Ratio (RRR)
+  RRR   = Net Profit     / MDD
+Ann RRR = Ann Net Profit / MDD
+> the bigger the RRR the better. should be three or better
+
+@Maximum Run-Up (MRU)
+largest improvement in trading equity between an equity low and a subsequent equity
+high
+
+@Risk Adjusted Return (RAR) 
+> higher percentage, better performance
+RAR increases if the rate of profit increases but the risk remains the same. 
+RAR can also increase however, if the rate of profit remains the same and if risk is decreased.
+Annualized RAR = Annualized Profit / Required Capital (RC)
+                                                       RC = Margin + Risk 
+                                                                     Risk = MDD * Safety factor 
+                                                                     
+@Model Efficiency
+ME = ( Net Profit / Perfect Profit ) (percentage)
+
+@Consistency 
+Evaluate average, std dev., max, min for each (adjusted)
+- Profit,Loss; Winning and Losing Trades; Winning and Losing Runs; Long and Short Trades
+
+@Patterns of Profit and Loss
+Evaluate performance distribution on yearly profit & loss with drawdown 
+> higher profit (trend up), lower MDD (trend down) 
+> the more even the distribution, the better, and the more distant the maximum drawdown, the better
+
